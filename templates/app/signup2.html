@@ -45,12 +45,12 @@
 
 	</div>
 
-		<div class="col-md-2"></div>
+		<div class="col-md-2" style="margin: auto;"><button style="width: 100%;" class="btn btn-primary" onclick="resident()">I’m Resident</button>
+			<button style="width: 100%;" class="btn btn-default" onclick="official()">I'm Official</button></div>
 
-	<div class="col-md-4" style="margin: auto;">
-		<button id='residentButton' style="width: 100%;" class="btn btn-default btn-lg btn-block" onclick="resident()">I’m Resident</button>
+	<div class="col-md-4">
 		<!-- Default form register -->
-		<form id="userForm" class="border mt-5 mb-5 border-secondary text-center p-3" method="post">
+		<form id='userForm' class="border mt-5 mb-5 border-secondary text-center p-3" method="post">
 			{% csrf_token %}
 		    <p class="h4 mb-4 text-secondary text-center">Sign up</p>
 
@@ -98,55 +98,6 @@
 		</form>
 		<!-- Default form register -->
 		
-		<br></br>
-		<button id='officialButton' style="width: 100%;" class="btn btn-primary btn-lg btn-block" onclick="official()">I’m Official</button>
-		<!-- Default form register -->
-		<form id="officialForm" class="border mt-5 mb-5 border-secondary text-center p-3" method="post">
-			{% csrf_token %}
-		    <p class="h4 mb-4 text-secondary text-center">Sign up</p>
-
-		    <!-- {{ form.as_p }} -->
-
-			{% for field in officialForm %}
-		    <p>
-	        	{{ field.label_tag }}
-	        	{{ field }}
-		        <!-- {% if field.help_text %}
-		          <small style="color: grey">{{ field.help_text }}</small>
-		        {% endif %} -->
-		        {% for error in field.errors %}
-		          <p style="color: red">{{ error }}</p>
-		        {% endfor %}
-		    </p>
-		    {% endfor %}
-
-		    <!-- Sign up button -->
-		    <button class="btn btn-secondary my-4 btn-block" type="submit">Sign up</button>
-
-		    <!-- Social register -->
-		    <p>or sign up with:</p>
-
-		    <a type="button" class="light-blue-text mx-2">
-		        <i class="fa fa-facebook"></i>
-		    </a>
-		    <a type="button" class="light-blue-text mx-2">
-		        <i class="fa fa-twitter"></i>
-		    </a>
-		    <a type="button" class="light-blue-text mx-2">
-		        <i class="fa fa-linkedin"></i>
-		    </a>
-		    <a type="button" class="light-blue-text mx-2">
-		        <i class="fa fa-github"></i>
-		    </a>
-
-		    <hr>
-
-		    <!-- Terms of service -->
-		    <p>By clicking
-		        <em>Sign up</em> you agree to our
-		        <a href="" target="_blank">terms of service</a>
-		    </p>
-		</form>
 	</div>
 
 	<div class="col-md-2"></div>
@@ -162,22 +113,19 @@
 	function get_ip(json) {
 		$("#id_location").val(json.ip);
 	}
+	function resident(){
+		$("#userForm").removeClass('hidden');
+	}
+
+	function official() {
+		$("#officialForm").removeClass('hidden');
+	}
+
 	$(document).ready(function() {
 		$("#userForm").addClass('hidden');
 		$("#officialForm").addClass('hidden');
 	});
 	
-	function resident() {
-		$("#userForm").removeClass('hidden');
-		$('#residentButton').hide();
-		$('#officialButton').hide();
-	}
-	
-	function official() {
-		$("#officialForm").removeClass('hidden');
-		$('#residentButton').hide();
-		$('#officialButton').hide();
-	}
 </script>
 
 <script src="https://api.ipify.org?format=jsonp&callback=get_ip"></script>

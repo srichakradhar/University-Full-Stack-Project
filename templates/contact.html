@@ -1,0 +1,87 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KSU | {% block title %}{% endblock %}</title>
+	<meta name="description" content="Django App - Digi Safari"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+  </head>
+
+<body id="top">
+
+    {% if not form %}
+      {% include "navbar.html" %}
+    {% endif %}
+
+      <!-- Start your project here-->
+      <div style="height: 100vh" class="container">
+
+      	{% block content %}
+
+      <main class="mdl-layout__content">
+        <div class="site-content">
+          <div class="mdl-grid site-max-width">
+            <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp page-content">
+              <div class="mdl-card__title">
+                <h1 class="mdl-card__title-text">Contact</h1>
+              </div>
+              <div class="mdl-card__media"><img class="article-image" src="{% static 'img/contact.jpg' %}" border="0" alt="Contact">
+              </div>
+              <div class="mdl-grid site-copy">
+                <div class="mdl-cell mdl-cell--12-col"><div class="mdl-card__supporting-text">
+  <p>Send us an email to <a href="mailto:akeyvanf@kennesaw.edu">akeyvanf@kennesaw.edu</a> or use the contact form below:</p>
+  <form action="mailto:akeyvanf@kennesaw.edu" method="POST" class="form-contact">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name" name="name">
+          <label class="mdl-textfield__label" for="Name">Name...</label>
+          <span class="mdl-textfield__error">Letters and spaces only</span>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="Email" name="_replyto">
+          <label class="mdl-textfield__label" for="Email">Phone Number...</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <textarea class="mdl-textfield__input" type="text" rows="5" id="note" name="message"></textarea>
+          <label class="mdl-textfield__label" for="note">Description</label>
+      </div>
+      <p>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+              Submit
+          </button>
+      </p>
+  </form>
+</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="mdl-mini-footer">
+          <div class="footer-container">
+            <div class="mdl-logo">&copy; KSU 2020</div>
+            <ul class="mdl-mini-footer__link-list">
+              <li><a href="#">Privacy & Terms</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+      <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
+    </div>
+    {% endblock %}
+  </body>
+</html>

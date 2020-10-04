@@ -9,7 +9,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_text
 from django.contrib.auth import get_user_model
 
-from .forms import SignUpForm
+from .forms import SignUpForm, OfficialSignUpForm
 from .models import Profile
 from .utils import get_location_from_ip
 from .tokens import account_activation_token
@@ -18,14 +18,18 @@ User = get_user_model()
 
 def signup(request):
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            user = form.save(commit=False)
+        try:
+            userForm = SignUpForm(request.POST)
+        except Exception as e:
+            userForm = OfficialSignUpForm(request.POST)
+
+        if userForm.is_valid():
+            user = userForm.save(commit=False)
             user.is_active = False
             user.save()
-            user = form.save()
+            user = userForm.save()
             user.refresh_from_db()  # load the profile instance created by the signal
-            user.profile.location = form.cleaned_data.get('location')
+            user.profile.location = userForm.cleaned_data.get('location')
             ip_address = user.profile.location
             location = get_location_from_ip(ip_address)
             print(location)
@@ -42,9 +46,11 @@ def signup(request):
             user.email_user(subject, message)
             return redirect('profiles:account-activation-sent')
     else:
-        form = SignUpForm()
+        userForm = SignUpForm()
+        officialForm = OfficialSignUpForm()
     return render(request, 'app/signup.html', {
-        'form': form,
+        'userForm': userForm,
+        'officialForm': OfficialSignUpForm,
         'profile': True
     })
 
@@ -67,7 +73,7 @@ def account_activate(request, uidb64, token):
         user.profile.email_confirmed = True
         user.save()
         login(request, user)
-        return redirect('users:dashboard')
+        return redirect('users:home')
     else:
         return render(request, 'registration/account_activation_invalid.html')
 

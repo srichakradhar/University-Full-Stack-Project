@@ -1,0 +1,187 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digi Safari | {% block title %}{% endblock %}</title>
+	<meta name="description" content="Django App - Digi Safari"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<link href="{% static 'css/main.css' %}" rel="stylesheet">
+  </head>
+
+<body id="top">
+
+    {% if not form %}
+      {% include "navbar.html" %}
+    {% endif %}
+
+      <!-- Start your project here-->
+      <div style="height: 100vh" class="container">
+
+      	{% block content %}
+
+      <main class="mdl-layout__content">
+        <div class="site-content">
+          <div class="container"><div class="mdl-grid site-max-width">
+            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+              <div class="mdl-card__media">
+                <img class="article-image" src="https://digi-safari.com/assets/images/courses_imgs/Oracle_SQL.png" border="0" alt="">
+              </div>
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Oracle SQL</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                This crash course of Oracle SQL is designed for people who has no SQL experience before. In this course, you will be able to pick up relational database concepts as well as core SQL basics with PL/SQL (Oracle SQL) syntax. It will prepare you for further advanced courses, such as Database Administration, Full Stack, Data Analytics, etc. For more information of what this course can lead to, please check our Course Roadmap.
+              </div><br>        <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+                  Learn More
+                </a>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+              <div class="mdl-card__media">
+                <img class="article-image" src="https://digi-safari.com/assets/images/courses_imgs/Medical_Image_Computing.png" border="0" alt="">
+              </div>
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Medical Image Computing</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                This course dives into the basics of machine learning using an approachable, and well-known programming language, Python. In this course, we will be reviewing two main components: First, you will be learning about the purpose of Machine Learning and where it applies to the real world.Second, you will get a general overview of Machine Learning topics such as supervised vs unsupervised learning, model evaluation, and Machine Learning algorithms.
+              </div><br>        <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+                  Learn More
+                </a>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+              <div class="mdl-card__media">
+                <img class="article-image" src="https://digi-safari.com/assets/images/courses_imgs/Tableau.png" border="0" alt="">
+              </div>
+              <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">BI with Tableau</h2>
+              </div>
+              <div class="mdl-card__supporting-text">
+                This class covers everything Tableau. Topics include data preparation, databases, basic and advanced views, parameter calculations, and dashboard construction. The class draws to a close with exam preparation. This class is suitable for all skill levels. Learn how to make the most of your data using Business Intelligence Reports and analytics. A Business Intelligence Report is a multi-perspective view into a dataset, with visualizations that represent different findings and insights from that dataset.
+              </div><br>        <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+                  Learn More
+                </a>
+              </div>
+            </div>
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="https://digi-safari.com/assets/images/courses_imgs/Web_Essentials.png" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Web Essentials</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          In this course, you will learn how to use the latest web technologies and responsive design practices that are central to targeting the entire spectrum of user platforms and browsers. This course provides you with an in-depth introduction to and exploration of a variety of key cutting-edge technologies being used in modern web design. Working in a highly engaging hands-on format, you will learn the foundation technologies and skills needed necessary to design highly interactive, feature-rich and user-friendly websites and web pages.
+        </div><br>        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+            Learn More
+          </a>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="https://digi-safari.com/assets/images/courses_imgs/React.png" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">React JS</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          This course explores Javascript based front-end application development, and in particular the React library (Currently Ver. 16.3). This course will use JavaScript ES6 for developing React application. You will also get an introduction to the use of Reactstrap for Bootstrap 4-based responsive UI design. You will be introduced to various aspects of React components. You will learn about React router and its use in developing single-page applications.
+        </div><br>        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+            Learn More
+          </a>
+        </div>
+    </div>
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="https://digi-safari.com/assets/images/courses_imgs/Angular.png" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Angular JS</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          This course concentrates mainly on Javascript based front-end frameworks, and in particular the Angular framework (Currently Ver. 7.x). This course will use Typescript for developing Angular application. Typescript features will be introduced in the context of Angular as part of the exercises. You will also get an introduction to the use of Angular Material and Angular Flex-Layout for responsive UI design. You will be introduced to various aspects of Angular including components, directives and services.
+        </div><br>        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+            Learn More
+          </a>
+        </div>
+    </div><br>    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="https://digi-safari.com/assets/images/courses_imgs/net-essentials.png" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">ASP .NET</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          .NET is a world-shattering advance in programming technology platform that greatly simplifies rich internet web application development. This best ASP.NET 4.5 MVC 4 essential training institute course in Chennai provides attendees with the realistic, hands-on, in depth knowledge and skills to develop Rich Internet Web applications by using C#, ASP.NET, ADO.NET and Microsoft Visual Studio.
+        </div><br>        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+            Learn More
+          </a>
+        </div>
+    </div><br>    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="{% static 'img/portfolio5.jpg' %}" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Node JS & Express</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          This course deals with all things server-side. We base the entire course around the NodeJS platform. We start with a brief overview of the Web protocols: HTTP and HTTPS. We examine NodeJS and NodeJS modules: Express for building web servers. On the database side, we review basic CRUD operations, NoSQL databases, in particular MongoDB and Mongoose for accessing MongoDB from NodeJS.
+        </div><br>        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+            Learn More
+          </a>
+        </div>
+    </div><br>    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="https://digi-safari.com/assets/images/courses_imgs/Backend_with_framework.png" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Web Services</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+          In this course you will be able to develop and design RESTful web services with Spring Boot. You will be able develop MICROSERVICES with Spring Boot and Spring Cloud. You will understand how to implement Exception Handling, Validation, HATEOAS and filtering for RESTful Web Services. You will implement client side load balancing (Ribbon), Dynamic scaling(Eureka Naming Server) and an API Gateway (Zuul).
+        </div><br>        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="{% url 'users:portfolio-page' %}">
+            Learn More
+          </a>
+        </div>
+    </div>
+</div></div>
+        </div>
+        <footer class="mdl-mini-footer">
+          <div class="footer-container">
+            <div class="mdl-logo">&copy; Unitiled. Design: <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
+            <ul class="mdl-mini-footer__link-list">
+              <li><a href="#">Privacy & Terms</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+      <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
+    </div>
+    {% endblock %}
+  </body>
+</html>
