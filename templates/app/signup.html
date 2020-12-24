@@ -26,7 +26,7 @@
 <div class="container mt-4">
 	<div class="row">
 		<!-- <div class="mdl-card__media"><img class="article-image" src="{% static 'img/about.jpg' %}" alt="About"></div> -->
-	<div class="col-md-4">
+	<!-- <div class="col-md-4">
 		
 		<div class="list-group mt-5">
 		    <a href="{% url 'users:about' %}" class="list-group-item list-group-item-action waves-effect">About Us</a>
@@ -43,34 +43,34 @@
 		    <a href="{% url 'users:dashboard' %}" class="list-group-item list-group-item-action waves-effect">Profile</a>
 		</div>
 
-	</div>
+	</div> -->
 
 		<div class="col-md-2"></div>
 
-	<div class="col-md-4" style="margin: auto;">
-		<button id='residentButton' style="width: 100%;" class="btn btn-default btn-lg btn-block" onclick="resident()">I’m Resident</button>
+	<div class="col-md-12">
+		<button id='residentButton' class="btn btn-default btn-lg btn-block blockButton" onclick="resident()">I’m Resident</button>
 		<!-- Default form register -->
-		<form id="userForm" class="border mt-5 mb-5 border-secondary text-center p-3" method="post">
+		<form id="userForm" class="border border-secondary text-center p-3" method="post">
 			{% csrf_token %}
 		    <p class="h4 mb-4 text-secondary text-center">Sign up</p>
 
-		    <!-- {{ form.as_p }} -->
-
-			{% for field in userForm %}
-		    <p>
-	        	{{ field.label_tag }}
-	        	{{ field }}
-		        <!-- {% if field.help_text %}
-		          <small style="color: grey">{{ field.help_text }}</small>
-		        {% endif %} -->
-		        {% for error in field.errors %}
-		          <p style="color: red">{{ error }}</p>
-		        {% endfor %}
-		    </p>
-		    {% endfor %}
-
+			<!-- {{ form.as_p }} -->
+			<div class="fields mdl-card mdl-shadow--2dp">
+				{% for field in userForm %}
+				<p>
+					{{ field.label_tag }}
+					{{ field }}
+					<!-- {% if field.help_text %}
+					<small style="color: grey">{{ field.help_text }}</small>
+					{% endif %} -->
+					{% for error in field.errors %}
+					<p style="color: red">{{ error }}</p>
+					{% endfor %}
+				</p>
+				{% endfor %}
+			</div>
 		    <!-- Sign up button -->
-		    <button class="btn btn-secondary my-4 btn-block" type="submit">Sign up</button>
+		    <button class="btn btn-secondary my-4" type="submit">Sign up</button>
 
 		    <!-- Social register -->
 		    <p>or sign up with:</p>
@@ -99,29 +99,29 @@
 		<!-- Default form register -->
 		
 		<br></br>
-		<button id='officialButton' style="width: 100%;" class="btn btn-primary btn-lg btn-block" onclick="official()">I’m Official</button>
+		<button id='officialButton' class="btn btn-primary btn-lg btn-block blockButton" onclick="official()">I’m Official</button>
 		<!-- Default form register -->
-		<form id="officialForm" class="border mt-5 mb-5 border-secondary text-center p-3" method="post">
+		<form id="officialForm" class="border border-secondary text-center p-3" method="post">
 			{% csrf_token %}
 		    <p class="h4 mb-4 text-secondary text-center">Sign up</p>
 
 		    <!-- {{ form.as_p }} -->
-
-			{% for field in officialForm %}
-		    <p>
-	        	{{ field.label_tag }}
-	        	{{ field }}
-		        <!-- {% if field.help_text %}
-		          <small style="color: grey">{{ field.help_text }}</small>
-		        {% endif %} -->
-		        {% for error in field.errors %}
-		          <p style="color: red">{{ error }}</p>
-		        {% endfor %}
-		    </p>
-		    {% endfor %}
-
+			<div class="fields mdl-card mdl-shadow--2dp">
+				{% for field in officialForm %}
+				<p>
+					{{ field.label_tag }}
+					{{ field }}
+					<!-- {% if field.help_text %}
+					<small style="color: grey">{{ field.help_text }}</small>
+					{% endif %} -->
+					{% for error in field.errors %}
+					<p style="color: red">{{ error }}</p>
+					{% endfor %}
+				</p>
+				{% endfor %}
+			</div>
 		    <!-- Sign up button -->
-		    <button class="btn btn-secondary my-4 btn-block" type="submit">Sign up</button>
+		    <button class="btn btn-secondary my-4" type="submit">Sign up</button>
 
 		    <!-- Social register -->
 		    <p>or sign up with:</p>

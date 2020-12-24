@@ -1,0 +1,22 @@
+form p {
+    margin: 10px auto;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 350px;
+    width: 100%;
+    background: #d6d6d696;
+}
+
+.blockButton {
+    width: 40%;
+    margin: auto !important;
+}
+
+img.ksu-logo {
+    width: 120px;
+    margin: auto 31%;
+}
